@@ -1,0 +1,21 @@
+{
+  "name": "browser-3dgs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.24.0",
+  "dependencies": {
+    "@sparkjsdev/spark": "^0.1.10",
+    "three": "^0.178.0",
+    "vite": "^7.3.0"
+  }
+}
