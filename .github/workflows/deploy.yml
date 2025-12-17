@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - main
   # 允许手动触发
   workflow_dispatch:
 
