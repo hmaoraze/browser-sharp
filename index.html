@@ -1,49 +1,143 @@
 <!doctype html>
 <html lang="zh-CN">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="description" content="3DGS PLY 文件在线查看器，用于高效预览和查看PLY格式3D模型文件">
-    <meta name="keywords" content="3DGS, PLY查看器, 3D模型, 在线预览">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Enter-tainer">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <title>3DGS PLY 查看器</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
-    <link rel="shortcut icon" href="/favicon/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title（SEO 核心） -->
+    <title>3DGS PLY 在线查看器 | WebGL 3D 模型预览工具</title>
+
+    <!-- Meta Description（已合并，唯一且规范） -->
+    <meta
+      name="description"
+      content="3DGS PLY 文件在线查看器，基于 WebGL 的 3DGS / PLY 三维模型预览工具，可高效加载、查看和渲染 PLY 格式 3D 模型，支持现代浏览器。"
+    />
+
+    <!-- Keywords（保留一个，干净不堆砌） -->
+    <meta
+      name="keywords"
+      content="3DGS, PLY, PLY查看器, 3DGS查看器, 3D模型, PLY文件,在线查看, WebGL"
+    />
+
+    <!-- Open Graph（搜索引擎 + 社交） -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="3DGS PLY 在线查看器 | WebGL 3D 模型预览工具" />
+    <meta
+      property="og:description"
+      content="基于 WebGL 的 3DGS / PLY 文件在线查看与三维模型预览工具，快速加载 3D 模型。"
+    />
+    <meta property="og:site_name" content="3DGS PLY 查看器" />
+    <meta property="og:locale" content="zh_CN" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="3DGS PLY 在线查看器" />
+    <meta
+      name="twitter:description"
+      content="基于 WebGL 的 3DGS / PLY 三维模型在线预览工具"
+    />
+
+    <!-- Schema.org 结构化数据（权威信号） -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "3DGS PLY 在线查看器",
+        "applicationCategory": "GraphicsApplication",
+        "operatingSystem": "Web",
+        "description": "基于 WebGL 的 3DGS / PLY 文件在线查看与三维模型预览工具",
+        "browserRequirements": "支持 WebGL 的现代浏览器",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="3DGS PLY 查看器" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+
+    <!-- Fallback 样式（兼容 & SEO 友好） -->
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html, body {
-        height: 100%;
-        width: 100%;
-        overflow: hidden; 
-      }
-      #app {
-        height: 100%;
-        width: 100%;
+      .fallback {
+        max-width: 640px;
+        margin: 48px auto;
+        padding: 24px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Helvetica, Arial, sans-serif;
+        text-align: center;
+        background: #f9fafb;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        color: #111827;
       }
     </style>
   </head>
+
   <body>
-    <div id="app" role="main" aria-label="3DGS PLY 模型查看主区域"></div>
-    <script type="module" src="/src/main.js" defer></script>
-    <script nomodule src="/src/main-legacy.js" defer></script>
+    <!-- H1 主语义（仅给搜索引擎，不影响 UI） -->
+    <h1 style="display:none">
+      3DGS PLY 在线查看器 - WebGL 3D 模型预览工具
+    </h1>
+
+    <!-- JS 被禁用 -->
     <noscript>
-      <div style="padding: 20px; text-align: center; background: #fefefe; border: 1px solid #ff4444; color: #333;">
-        您的浏览器已禁用JavaScript，无法正常使用3DGS PLY查看器功能，请启用JavaScript后重试。
+      <div class="fallback">
+        <h2>⚠️ JavaScript 已被禁用</h2>
+        <p>
+          您的浏览器已禁用 JavaScript，无法正常使用 3DGS PLY 查看器功能。<br />
+          请启用 JavaScript 后刷新页面。
+        </p>
       </div>
     </noscript>
+
+    <!-- 浏览器不支持 ES Module -->
+    <script nomodule>
+      document.body.innerHTML =
+        '<div class="fallback">' +
+        '<h2>浏览器版本过低</h2>' +
+        '<p>当前浏览器不支持现代 Web 标准，无法运行 3DGS PLY 查看器。<br>请升级浏览器（Chrome / Edge / Firefox / Safari）。</p>' +
+        '</div>';
+    </script>
+
+    <!-- WebGL 检测（在主程序前） -->
+    <script>
+      (function () {
+        try {
+          var canvas = document.createElement("canvas");
+          var gl =
+            canvas.getContext("webgl2") ||
+            canvas.getContext("webgl") ||
+            canvas.getContext("experimental-webgl");
+
+          if (!gl) {
+            document.body.innerHTML =
+              '<div class="fallback">' +
+              '<h2>WebGL 不可用</h2>' +
+              '<p>当前浏览器或设备不支持 WebGL，无法显示 3D 内容。<br>' +
+              '请检查显卡驱动、浏览器设置，或使用桌面端浏览器。</p>' +
+              '</div>';
+          }
+        } catch (e) {
+          document.body.innerHTML =
+            '<div class="fallback">' +
+            '<h2>环境检测失败</h2>' +
+            '<p>无法初始化 3D 渲染环境，请尝试更换浏览器或设备。</p>' +
+            '</div>';
+        }
+      })();
+    </script>
+
+    <!-- 正常应用 -->
+    <div id="app"></div>
+
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
