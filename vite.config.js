@@ -1,7 +1,15 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from "vite";
 
 export default defineConfig({
-  // 使用环境变量 BASE_PATH，默认为 '/'（本地开发时）
-  // GitHub Actions 会设置 BASE_PATH 为 /repo-name/
-  base: process.env.BASE_PATH || '/',
-})
+  // 保留你的 BASE_PATH 逻辑
+  base: process.env.BASE_PATH || "/",
+
+  // 明确 publicDir
+  publicDir: "public",
+
+  build: {
+    outDir: "dist",
+    emptyOutDir: true,
+    assetsDir: "assets"
+  }
+});
