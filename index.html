@@ -1,18 +1,49 @@
 <!doctype html>
 <html lang="zh-CN">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="description" content="3DGS PLY 文件在线查看器，用于高效预览和查看PLY格式3D模型文件">
+    <meta name="keywords" content="3DGS, PLY查看器, 3D模型, 在线预览">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Enter-tainer">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <title>3DGS PLY 查看器</title>
-    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="3DGS PLY 查看器" />
-    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        height: 100%;
+        width: 100%;
+        overflow: hidden; 
+      }
+      #app {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <div id="app" role="main" aria-label="3DGS PLY 模型查看主区域"></div>
+    <script type="module" src="/src/main.js" defer></script>
+    <script nomodule src="/src/main-legacy.js" defer></script>
+    <noscript>
+      <div style="padding: 20px; text-align: center; background: #fefefe; border: 1px solid #ff4444; color: #333;">
+        您的浏览器已禁用JavaScript，无法正常使用3DGS PLY查看器功能，请启用JavaScript后重试。
+      </div>
+    </noscript>
   </body>
 </html>
